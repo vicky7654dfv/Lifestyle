@@ -14,6 +14,7 @@ import Login from "./pages/Login/Login";
 import AOS from "aos";
 import { useEffect } from "react";
 import 'aos/dist/aos.css';
+import { CartProvider } from "./components/CartContext/CartContext";
 
 function App() {
   useEffect(() => {
@@ -27,6 +28,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+      <CartProvider>
         <Header />
         <Routes>
           <Route path="/" element={<HomePage1 />} />
@@ -40,6 +42,7 @@ function App() {
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Login" element={<Login />} />
         </Routes>
+        </CartProvider>
         <Footer />
       </BrowserRouter>
     </>

@@ -1,0 +1,141 @@
+.bannerContainer {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.backgroundVideo {
+  position: absolute;
+  width: 100%;
+  height: 600px;
+  z-index: -1;
+  object-fit: cover;
+}
+
+.content {
+  text-align: center;
+  color: white;
+  z-index: 1;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.paragraph {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.ctaButton {
+  background-color: #ffffff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  display: inline-block;
+  color: #007bff;
+}
+
+.ctaButton:hover {
+  background-color: #007bff;
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+/* Media Query for 1024px */
+@media (max-width: 1024px) {
+  .bannerContainer {
+    height: 500px;
+  }
+  .backgroundVideo {
+    height: 500px;
+  }
+  .title {
+    font-size: 3.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .paragraph {
+    font-size: 1.1rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .ctaButton {
+    padding: 14px 28px;
+    font-size: 1rem;
+  }
+}
+
+/* Media Query for 768px */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .paragraph {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ctaButton {
+    padding: 12px 25px;
+    font-size: 0.95rem;
+  }
+
+  .content {
+    padding: 0 15px;
+  }
+}
+
+/* Media Query for 425.6px */
+@media (max-width: 425.6px) {
+  .title {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .paragraph {
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+    max-width: 95%;
+  }
+
+  .ctaButton {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .content {
+    padding: 0 10px;
+  }
+
+  .backgroundVideo {
+    height: 400px;
+  }
+
+  .bannerContainer {
+    height: 400px;
+  }
+}

@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Style from "../Header/Header.module.css";
 import Img from "../../assets/Header/logo.png";
 import { Link, useLocation } from "react-router-dom";
+import { CartContext } from "../CartContext/CartContext";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   const isHome2 = location.pathname === "/HomePage2";
-  
+  const { getCartItemsCount } = useContext(CartContext);
+
   return (
     <div data-aos="fade-up" className={Style.headerWrap}>
       <div className={Style.imgWrap}>
@@ -52,8 +54,13 @@ export default function Header() {
           <li>
             <Link to="/Contact">Contact</Link>
           </li>
-          <li>
-            <Link to="/Checkout">Checkout</Link>
+          <li className={Style.cartLink}>
+            <Link to="/Checkout">
+              Checkout 
+              {getCartItemsCount() > 0 && (
+                <span className={Style.cartCount}>{getCartItemsCount()}</span>
+              )}
+            </Link>
           </li>
           <li>
             <Link to="/SignUp">Sign Up</Link>
