@@ -6,12 +6,13 @@
   justify-content: center;
   align-items: center;
   margin-top: 80px;
+  overflow: hidden;
 }
 
-.backgroundVideo {
+.backgroundImage {
   position: absolute;
   width: 100%;
-  height: 600px;
+  height: 100%;
   z-index: -1;
   object-fit: cover;
 }
@@ -37,6 +38,7 @@
   line-height: 1.6;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
+
 .ctaButton {
   background-color: #ffffff;
   border: none;
@@ -65,9 +67,7 @@
   .bannerContainer {
     height: 500px;
   }
-  .backgroundVideo {
-    height: 500px;
-  }
+  
   .title {
     font-size: 3.5rem;
     margin-bottom: 1.2rem;
@@ -129,10 +129,6 @@
 
   .content {
     padding: 0 10px;
-  }
-
-  .backgroundVideo {
-    height: 400px;
   }
 
   .bannerContainer {

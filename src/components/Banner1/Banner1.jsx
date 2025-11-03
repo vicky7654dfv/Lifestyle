@@ -1,21 +1,16 @@
 import React from 'react';
 import Style from "./Banner1.module.css";
 import { Link } from 'react-router-dom';
+import bg from "../../assets/Banner1/bg.jpg"
 
 export default function Banner1() {
-  // const videoSrc = new URL('../../assets/Banner1/vidBg.mp4', import.meta.url).href;
-
   return (
     <div data-aos="fade-up" className={Style.bannerContainer}>
-      <video
-  src="/videos/vidBg.mp4"
-  className={Style.backgroundVideo}
-  autoPlay
-  muted
-  loop
-  playsInline
-/>
-
+      <img
+        src={bg}
+        className={Style.backgroundImage}
+        alt="Lifestyle background"
+      />
       <div className={Style.content}>
         <h1 className={Style.title}>LifeStyle</h1>
         <p className={Style.paragraph}>
