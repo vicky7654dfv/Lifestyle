@@ -1,19 +1,19 @@
 import React from 'react';
 import Style from "./Banner1.module.css";
-import VidBg from "../../assets/Banner1/vidBg.mp4" 
+import vidBg from "../../assets/Banner1/vidBg.mp4" 
 import { Link } from 'react-router-dom';
 
 export default function Banner1() {
   return (
     <div data-aos="fade-up" className={Style.bannerContainer}>
-      <video 
+      <video
         className={Style.backgroundVideo} 
         autoPlay 
         muted 
         loop 
         playsInline
       >
-        <source src={VidBg} type="video/mp4" />
+        <source src={vidBg} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       
