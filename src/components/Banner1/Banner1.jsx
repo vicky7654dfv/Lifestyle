@@ -1,6 +1,6 @@
 import React from 'react';
 import Style from "./Banner1.module.css";
-import Vid from "../../assets/Banner1/vidBg.mp4" 
+import VidBg from "../../assets/Banner1/vidBg.mp4" 
 import { Link } from 'react-router-dom';
 
 export default function Banner1() {
@@ -13,7 +13,7 @@ export default function Banner1() {
         loop 
         playsInline
       >
-        <source src={Vid} />
+        <source src={VidBg} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       
