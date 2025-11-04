@@ -1,11 +1,21 @@
-import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Style from "./Checkout.module.css";
 import { CartContext } from "../../components/CartContext/CartContext";
 
 export default function Checkout() {
-  const { cart, removeFromCart, addToCart, clearCart, getCartTotal, getCartItemsCount } = useContext(CartContext);
+  const {
+    cart,
+    removeFromCart,
+    addToCart,
+    clearCart,
+    getCartTotal,
+    getCartItemsCount,
+  } = useContext(CartContext);
   const [orderPlaced, setOrderPlaced] = useState(false);
+  const [redirectCountdown, setRedirectCountdown] = useState(5);
+  const navigate = useNavigate();
+  
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -14,13 +24,13 @@ export default function Checkout() {
     zipCode: "",
     cardNumber: "",
     expiryDate: "",
-    cvv: ""
+    cvv: "",
   });
 
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -31,16 +41,43 @@ export default function Checkout() {
     clearCart();
   };
 
+  const calculateTotal = () => {
+    const subtotal = getCartTotal();
+    const shipping = subtotal > 5000 ? 0 : 200;
+    const tax = subtotal * 0.18;
+    return subtotal + shipping + tax;
+  };
+
+  // Auto redirect effect
+  useEffect(() => {
+    if (orderPlaced) {
+      const countdownInterval = setInterval(() => {
+        setRedirectCountdown((prev) => {
+          if (prev <= 1) {
+            clearInterval(countdownInterval);
+            navigate("/");
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+
+      return () => clearInterval(countdownInterval);
+    }
+  }, [orderPlaced, navigate]);
+
   if (orderPlaced) {
     return (
-      <div className={Style.checkoutContainer}>
+      <div data-aos="fade-up" className={Style.checkoutContainer}>
         <div className={Style.successMessage}>
           <div className={Style.successIcon}>✓</div>
           <h2>Order Placed Successfully!</h2>
           <p>Thank you for your purchase. Your order has been confirmed.</p>
-          <p>Order Total: <strong>₹{getCartTotal().toLocaleString("en-IN")}</strong></p>
+          <p className={Style.redirectText}>
+            Redirecting to home in {redirectCountdown} seconds...
+          </p>
           <Link to="/" className={Style.continueShopping}>
-            Continue Shopping
+            Continue Shopping Now
           </Link>
         </div>
       </div>
@@ -49,20 +86,52 @@ export default function Checkout() {
 
   if (cart.length === 0) {
     return (
-      <div className={Style.checkoutContainer}>
-        <div className={Style.emptyCart}>
-          <h2>Your cart is empty</h2>
-          <p>Add some items to your cart to proceed with checkout.</p>
-          <Link to="/" className={Style.continueShopping}>
-            Continue Shopping
-          </Link>
+      <div data-aos="fade-up" className={Style.checkoutContainer}>
+        <div className={Style.emptyCartSection}>
+          <div className={Style.emptyCartAnimation}>
+            <div className={Style.cartIcon}>
+              <div className={Style.cartBody}></div>
+              <div className={Style.cartHandle}></div>
+              <div className={Style.cartWheel}></div>
+              <div className={Style.cartWheel}></div>
+            </div>
+            <div className={Style.floatingItems}>
+              <div className={Style.floatingItem}></div>
+              <div className={Style.floatingItem}></div>
+              <div className={Style.floatingItem}></div>
+            </div>
+          </div>
+          <div className={Style.emptyCartContent}>
+            <h2>Your Shopping Cart is Empty</h2>
+            <p>
+              Looks like you haven't added any items to your cart yet. Start
+              exploring our amazing collection!
+            </p>
+            <div className={Style.emptyCartFeatures}>
+              <div className={Style.feature}>
+                <span className={Style.featureIcon}>🚚</span>
+                <span>Free Shipping Over ₹5000</span>
+              </div>
+              <div className={Style.feature}>
+                <span className={Style.featureIcon}>↩️</span>
+                <span>Easy Returns</span>
+              </div>
+              <div className={Style.feature}>
+                <span className={Style.featureIcon}>🔒</span>
+                <span>Secure Checkout</span>
+              </div>
+            </div>
+            <Link to="/" className={Style.exploreButton}>
+              Start Shopping Now
+            </Link>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className={Style.checkoutContainer}>
+    <div data-aos="fade-up" className={Style.checkoutContainer}>
       <div className={Style.checkoutHeader}>
         <h1>Checkout</h1>
         <p>Complete your purchase</p>
@@ -105,6 +174,7 @@ export default function Checkout() {
                     }
                   }}
                   className={Style.removeBtn}
+                  title="Remove all items"
                 >
                   ×
                 </button>
@@ -127,13 +197,7 @@ export default function Checkout() {
             </div>
             <div className={Style.summaryRow + ' ' + Style.grandTotal}>
               <span>Total:</span>
-              <span>
-                ₹{(
-                  getCartTotal() + 
-                  (getCartTotal() > 5000 ? 0 : 200) + 
-                  (getCartTotal() * 0.18)
-                ).toLocaleString("en-IN")}
-              </span>
+              <span>₹{calculateTotal().toLocaleString("en-IN")}</span>
             </div>
           </div>
         </div>
@@ -206,6 +270,7 @@ export default function Checkout() {
                   value={formData.cardNumber}
                   onChange={handleInputChange}
                   required
+                  maxLength="16"
                 />
               </div>
               <div className={Style.formRow}>
@@ -217,6 +282,7 @@ export default function Checkout() {
                     value={formData.expiryDate}
                     onChange={handleInputChange}
                     required
+                    maxLength="5"
                   />
                 </div>
                 <div className={Style.formGroup}>
@@ -227,17 +293,14 @@ export default function Checkout() {
                     value={formData.cvv}
                     onChange={handleInputChange}
                     required
+                    maxLength="3"
                   />
                 </div>
               </div>
             </div>
 
             <button type="submit" className={Style.placeOrderBtn}>
-              Place Order - ₹{(
-                getCartTotal() + 
-                (getCartTotal() > 5000 ? 0 : 200) + 
-                (getCartTotal() * 0.18)
-              ).toLocaleString("en-IN")}
+              Place Order - ₹{calculateTotal().toLocaleString("en-IN")}
             </button>
           </form>
         </div>

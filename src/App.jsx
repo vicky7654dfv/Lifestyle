@@ -15,6 +15,9 @@ import AOS from "aos";
 import { useEffect } from "react";
 import 'aos/dist/aos.css';
 import { CartProvider } from "./components/CartContext/CartContext";
+import { SearchProvider } from "./components/SearchContext/SearchContext";
+import ScrollToTop from "./components/ScrollToTop";
+import Error from "./pages/Error/Error";
 
 function App() {
   useEffect(() => {
@@ -28,6 +31,8 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
+      <SearchProvider>
       <CartProvider>
         <Header />
         <Routes>
@@ -41,8 +46,10 @@ function App() {
           <Route path="/Checkout" element={<Checkout />} />
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Login" element={<Login />} />
+          <Route path="/Error" element={<Error />} />
         </Routes>
         </CartProvider>
+        </SearchProvider>
         <Footer />
       </BrowserRouter>
     </>

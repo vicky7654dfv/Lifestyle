@@ -21,10 +21,12 @@ import Img18 from "../../assets/Grid1/18.jpg";
 import Img19 from "../../assets/Grid1/19.jpg";
 import Img20 from "../../assets/Grid1/20.jpg";
 import { CartContext } from "../CartContext/CartContext";
+import { SearchContext } from "../SearchContext/SearchContext";
 
 export default function Grid1() {
   const [activeCategory, setActiveCategory] = useState("All");
   const { cart, addToCart, removeFromCart } = useContext(CartContext);
+  const { searchTerm } = useContext(SearchContext);
 
   const lifestyleItems = [
     // Men Category (4 items)
@@ -200,9 +202,16 @@ export default function Grid1() {
 
   const categories = ["All", "Men", "Women", "Gym", "Accessories", "Home Kits"];
 
-  const filteredItems = activeCategory === "All" 
-    ? lifestyleItems
-    : lifestyleItems.filter(item => item.type === activeCategory);
+  // Filter by both category and search term
+  const filteredItems = lifestyleItems.filter(item => {
+    const matchesCategory = activeCategory === "All" || item.type === activeCategory;
+    const matchesSearch = searchTerm === "" || 
+      item.label.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.details.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.type.toLowerCase().includes(searchTerm.toLowerCase());
+    
+    return matchesCategory && matchesSearch;
+  });
 
   return (
     <>
@@ -210,6 +219,11 @@ export default function Grid1() {
         <div className={Style.sectionHeader}>
           <h2 className={Style.sectionTitle}>Lifestyle Collection</h2>
           <p className={Style.sectionSubtitle}>Curated products for your modern lifestyle</p>
+          {searchTerm && (
+            <p className={Style.searchResults}>
+              Showing {filteredItems.length} results for "{searchTerm}"
+            </p>
+          )}
         </div>
 
         <div className={Style.categoryFilters}>
@@ -263,6 +277,13 @@ export default function Grid1() {
             );
           })}
         </div>
+
+        {filteredItems.length === 0 && (
+          <div className={Style.noResults}>
+            <h3>No products found</h3>
+            <p>Try adjusting your search or filter criteria</p>
+          </div>
+        )}
       </div>
       <hr />
     </>

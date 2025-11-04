@@ -97,6 +97,7 @@
 .hoverContent {
   transform: translateY(30px);
   transition: all 0.4s ease 0.1s;
+  width: 100%;
 }
 
 .gridItem:hover .hoverContent {
@@ -108,12 +109,14 @@
   font-weight: bold;
   margin-bottom: 10px;
   color: white;
+  line-height: 1.2;
 }
 
 .partnerDescription {
   font-size: 1rem;
   margin-bottom: 15px;
   opacity: 0.9;
+  line-height: 1.4;
 }
 
 .partnershipInfo {
@@ -126,6 +129,7 @@
   border-radius: 20px;
   font-size: 0.9rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
+  display: inline-block;
 }
 
 .newProducts {
@@ -141,6 +145,7 @@
 .newProducts ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .newProducts li {
@@ -148,6 +153,7 @@
   font-size: 0.9rem;
   opacity: 0.9;
   position: relative;
+  line-height: 1.3;
 }
 
 .newProducts li::before {
@@ -388,16 +394,58 @@
   .slideContent {
     padding: 30px 20px 20px;
   }
+  
+  /* Smaller font sizes for 768px */
+  .partnerName {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+  
+  .partnerDescription {
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+  }
+  
+  .partnershipBadge {
+    font-size: 0.8rem;
+    padding: 4px 12px;
+  }
+  
+  .newProducts h4 {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+  
+  .newProducts li {
+    font-size: 0.8rem;
+    padding: 4px 0;
+  }
+  
+  .exploreButton {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .slideTitle {
+    font-size: 1.4rem;
+  }
+  
+  .slideDescription {
+    font-size: 0.9rem;
+  }
 }
 
 /* Media Query for 425.6px */
 @media (max-width: 425.6px) {
   .mainContainer {
+    border-radius: 20px;
     padding: 30px 10px;
   }
   
   .imageContainer {
-    height: 250px;
+    height: 200px;
+    border-radius: 20px;
+
   }
   
   .slider {
@@ -409,29 +457,98 @@
     font-size: 1.8rem;
   }
   
-  .partnerName {
-    font-size: 1.4rem;
-  }
-  
-  .slideTitle {
-    font-size: 1.4rem;
+  .hoverOverlay {
+    padding: 10px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-radius: 20px;
   }
   
   .hoverContent {
-    padding: 15px;
+    padding: 5px;
+    transform: none;
+    max-height: none;
+    overflow: visible;
+  }
+  
+  .gridItem:hover .hoverContent {
+    transform: none;
+  }
+  
+  .partnerName {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    line-height: 1.1;
+  }
+  
+  .partnerDescription {
+    font-size: 0.7rem;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  
+  .partnershipInfo {
+    margin-bottom: 8px;
+  }
+  
+  .partnershipBadge {
+    font-size: 0.6rem;
+    padding: 3px 8px;
+  }
+  
+  .newProducts {
+    margin-bottom: 8px;
+  }
+  
+  .newProducts h4 {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+  }
+  
+  .newProducts ul {
+    margin-bottom: 8px;
+  }
+  
+  .newProducts li {
+    font-size: 0.6rem;
+    padding: 2px 0;
+    line-height: 1.1;
   }
   
   .exploreButton,
   .slideButton {
-    padding: 10px 20px;
-    font-size: 0.9rem;
+    padding: 6px 12px;
+    font-size: 0.7rem;
   }
   
-  .newProducts li {
-    font-size: 0.8rem;
+  .slideTitle {
+    font-size: 1.2rem;
   }
   
   .slideDescription {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+  }
+  
+  /* Fix blue border exceeding on mobile */
+  .gridItem {
+    box-sizing: border-box;
+  }
+  
+  .gridItem:hover {
+    border: 2px solid #007bff;
+    transform: translateY(-5px); /* Reduced lift on mobile */
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.2);
+  }
+  
+  /* Ensure the border stays within container */
+  .photosGrid {
+    gap: 15px; /* Reduced gap for mobile */
+  }
+  
+  /* Remove any scrolling behavior */
+  .gridItem,
+  .hoverOverlay,
+  .hoverContent {
+    overflow: visible !important;
   }
 }

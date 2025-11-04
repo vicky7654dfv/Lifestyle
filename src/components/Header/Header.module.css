@@ -29,8 +29,14 @@
   flex: 0 1 400px;
 }
 
-.inputDiv input {
-  padding: 12px 20px;
+.searchForm {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchInput {
+  padding: 12px 50px 12px 20px;
   border: 2px solid #e9ecef;
   border-radius: 30px;
   width: 100%;
@@ -41,16 +47,39 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.inputDiv input:focus {
+.searchInput:focus {
   border-color: #007bff;
   box-shadow: 0 2px 12px rgba(0, 123, 255, 0.15);
   transform: translateY(-1px);
 }
 
-.inputDiv input::placeholder {
+.searchInput::placeholder {
   color: #6c757d;
   font-weight: 500;
   letter-spacing: 0.3px;
+}
+
+.searchButton {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #007bff;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.searchButton:hover {
+  background: #0056b3;
+  transform: translateY(-50%) scale(1.1);
 }
 
 .linksWrap ul {
@@ -187,7 +216,9 @@
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  line-height: 1;
 }
+
 /* Media Queries */
 
 /* Desktop (1024px) */
@@ -228,9 +259,23 @@
   .inputDiv {
     flex: 0 1 200px;
   }
-.inputDiv input{
-  font-size: 0.8rem;
-}
+  
+  .searchInput {
+    font-size: 0.8rem;
+    padding: 10px 45px 10px 15px;
+  }
+  
+  .searchButton {
+    width: 30px;
+    height: 30px;
+    right: 6px;
+  }
+  
+  .searchButton svg {
+    width: 16px;
+    height: 16px;
+  }
+
   .linksWrap ul {
     gap: 0.1rem;
   }
@@ -238,6 +283,14 @@
   .linksWrap a {
     font-size: 0.7rem;
     padding: 4px 6px;
+  }
+
+  .cartCount {
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+    top: -6px;
+    right: -6px;
   }
 }
 
@@ -272,10 +325,21 @@
     min-width: 0;
   }
 
-  .inputDiv input {
-    padding: 8px 14px;
+  .searchInput {
+    padding: 8px 40px 8px 14px;
     font-size: 0.85rem;
     width: 100%;
+  }
+  
+  .searchButton {
+    width: 28px;
+    height: 28px;
+    right: 5px;
+  }
+  
+  .searchButton svg {
+    width: 14px;
+    height: 14px;
   }
 
   .linksWrap {
@@ -350,5 +414,20 @@
     font-size: 0.85rem;
     text-align: center;
     border-bottom: none;
+  }
+
+  /* Fixed cart count for mobile */
+  .cartCount {
+    width: 16px;
+    height: 16px;
+    font-size: 0.65rem;
+    top: -4px;
+    right: 10px;
+    line-height: 1;
+  }
+
+  /* Ensure cart link has enough padding for the count */
+  .cartLink a {
+    padding-right: 8px;
   }
 }
