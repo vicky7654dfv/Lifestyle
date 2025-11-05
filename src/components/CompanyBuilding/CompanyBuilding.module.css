@@ -1,0 +1,362 @@
+/* Stackly Section */
+.stacklySection {
+  padding: 20px;
+  background: linear-gradient(135deg, #d3e8ff 40%, #f8f9fa 60%);
+  position: relative;
+  overflow: hidden;
+}
+
+.stacklySection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #007bff, transparent);
+}
+
+.stacklyContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Stackly Header */
+.stacklyHeader {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.logoContainer {
+  margin-bottom: 30px;
+}
+
+.stacklyLogo {
+  height: 80px;
+  width: auto;
+  filter: drop-shadow(0 10px 20px rgba(0, 123, 255, 0.2));
+  transition: all 0.3s ease;
+}
+
+.stacklyLogo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 15px 30px rgba(0, 123, 255, 0.3));
+}
+
+.stacklyTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #2d3748, #4a5568);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stacklySubtitle {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #718096;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Buildings Grid */
+.buildingsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.buildingCard {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.buildingCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.buildingImageContainer {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.buildingImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.buildingCard:hover .buildingImage {
+  transform: scale(1.1);
+}
+
+.buildingOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 123, 255, 0.8), rgba(108, 117, 125, 0.8));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.buildingCard:hover .buildingOverlay {
+  opacity: 1;
+}
+
+.viewDetails {
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  border: 2px solid white;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.viewDetails:hover{
+    color: yellow;
+    border: 2px solid yellow;
+}
+
+.buildingCard:hover .viewDetails {
+  transform: scale(1.1);
+}
+
+.buildingInfo {
+  padding: 25px;
+}
+
+.buildingName {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 8px;
+}
+
+.buildingLocation {
+  font-size: 1rem;
+  color: #007bff;
+  font-weight: 600;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.buildingLocation::before {
+  content: '📍';
+  font-size: 0.9rem;
+}
+
+.buildingFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.feature {
+  font-size: 0.9rem;
+  color: #718096;
+  font-weight: 500;
+}
+
+/* Global Stats */
+.globalStats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 123, 255, 0.3);
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: white;
+}
+
+.statIcon {
+  font-size: 3rem;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+}
+
+.statContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 5px 0 0 0;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Media Queries */
+
+/* 1024px */
+@media (max-width: 1024px) {
+  .stacklySection {
+    padding: 40px 30px;
+  }
+  
+  .stacklyTitle {
+    font-size: 2.5rem;
+  }
+  
+  .buildingsGrid {
+    gap: 30px;
+  }
+  
+  .buildingImageContainer {
+    height: 220px;
+  }
+  
+  .globalStats {
+    gap: 30px;
+    padding: 40px 30px;
+  }
+  
+  .statIcon {
+    font-size: 2.5rem;
+  }
+  
+  .statNumber {
+    font-size: 2rem;
+  }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+  .stacklySection {
+    padding: 60px 20px;
+  }
+  
+  .stacklyHeader {
+    margin-bottom: 60px;
+  }
+  
+  .stacklyLogo {
+    height: 60px;
+  }
+  
+  .stacklyTitle {
+    font-size: 2.2rem;
+  }
+  
+  .stacklySubtitle {
+    font-size: 1.1rem;
+  }
+  
+  .buildingsGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 500px;
+    margin: 0 auto 60px;
+  }
+  
+  .buildingImageContainer {
+    height: 250px;
+  }
+  
+  .globalStats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 40px 30px;
+  }
+  
+  .statItem {
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* 425.6px */
+@media (max-width: 425.6px) {
+  .stacklySection {
+    padding: 50px 15px;
+  }
+  
+  .stacklyHeader {
+    margin-bottom: 50px;
+  }
+  
+  .stacklyLogo {
+    height: 50px;
+  }
+  
+  .stacklyTitle {
+    font-size: 1.8rem;
+  }
+  
+  .stacklySubtitle {
+    font-size: 1rem;
+  }
+  
+  .buildingsGrid {
+    gap: 25px;
+    margin-bottom: 50px;
+  }
+  
+  .buildingImageContainer {
+    height: 200px;
+  }
+  
+  .buildingInfo {
+    padding: 20px;
+  }
+  
+  .buildingName {
+    font-size: 1.2rem;
+  }
+  
+  .globalStats {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 30px 25px;
+  }
+  
+  .statIcon {
+    font-size: 2rem;
+  }
+  
+  .statNumber {
+    font-size: 1.8rem;
+  }
+  
+  .statLabel {
+    font-size: 0.9rem;
+  }
+}
