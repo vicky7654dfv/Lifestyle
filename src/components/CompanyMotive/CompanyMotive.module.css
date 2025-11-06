@@ -1,0 +1,166 @@
+.companyMotive {
+  margin-top: 20px;
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.textSection h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #ffffff, #f0f8ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.mission, .vision {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.statNumber {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.motivesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.motiveCard {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.motiveCard:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.motiveIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.motiveCard h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.motiveCard p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .content {
+    gap: 3rem;
+  }
+  
+  .motivesGrid {
+    gap: 1rem;
+  }
+  
+  .motiveCard {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .companyMotive {
+    padding: 3rem 0;
+  }
+  
+  .content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .textSection h2 {
+    font-size: 2.4rem;
+  }
+  
+  .stats {
+    justify-content: space-around;
+  }
+  
+  .motivesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 425.6px) {
+  .companyMotive {
+    padding: 2rem 0;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  .textSection h2 {
+    font-size: 2rem;
+  }
+  
+  .mission, .vision {
+    font-size: 1rem;
+  }
+  
+  .stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .motiveCard {
+    padding: 1.25rem;
+  }
+  
+  .motiveIcon {
+    font-size: 2rem;
+  }
+}

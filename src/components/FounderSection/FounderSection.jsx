@@ -3,8 +3,10 @@ import Style from "./FounderSection.module.css";
 import founder1 from "../../assets/About/FounderSection/1.webp";
 import founder2 from "../../assets/About/FounderSection/2.webp";
 import founder3 from "../../assets/About/FounderSection/3.webp";
+import { useNavigate } from "react-router-dom";
 
 export default function FounderSection() {
+  const navigate= useNavigate();
   return (
       <section className={Style.foundersSection}>
         <div className={Style.foundersContainer}>
@@ -26,9 +28,9 @@ export default function FounderSection() {
                 <img src={founder1} alt="Sarah Chen" className={Style.founderImage} />
                 <div className={Style.founderOverlay}>
                   <div className={Style.socialLinks}>
-                    <a href="/Error" className={Style.socialLink}>in</a>
-                    <a href="/Error" className={Style.socialLink}>tw</a>
-                    <a href="/Error" className={Style.socialLink}>ig</a>
+                    <a onClick={() => navigate('/Error')} className={Style.socialLink}>in</a>
+                    <a onClick={() => navigate('/Error')} className={Style.socialLink}>tw</a>
+                    <a onClick={() => navigate('/Error')} className={Style.socialLink}>ig</a>
                   </div>
                 </div>
                 <div className={Style.founderBadge}>CEO & Founder</div>
@@ -59,9 +61,9 @@ export default function FounderSection() {
                 <img src={founder2} alt="Marcus Rodriguez" className={Style.founderImage} />
                 <div className={Style.founderOverlay}>
                   <div className={Style.socialLinks}>
-                    <a href="/Error" className={Style.socialLink}>in</a>
-                    <a href="/Error" className={Style.socialLink}>tw</a>
-                    <a href="/Error" className={Style.socialLink}>ig</a>
+                    <a onClick={() => navigate('/Error')} className={Style.socialLink}>in</a>
+                    <a onClick={() => navigate('/Error')} className={Style.socialLink}>tw</a>
+                    <a onClick={() => navigate('/Error')} className={Style.socialLink}>ig</a>
                   </div>
                 </div>
                 <div className={Style.founderBadge}>CTO & Co-Founder</div>
@@ -92,9 +94,9 @@ export default function FounderSection() {
                 <img src={founder3} alt="Elena Petrova" className={Style.founderImage} />
                 <div className={Style.founderOverlay}>
                   <div className={Style.socialLinks}>
-                    <a href="/Error" className={Style.socialLink}>in</a>
-                    <a href="/Error" className={Style.socialLink}>tw</a>
-                    <a href="/Error" className={Style.socialLink}>ig</a>
+                    <a onClick={() => navigate('/Error')} className={Style.socialLink}>in</a>
+                    <a onClick={() => navigate('/Error')} className={Style.socialLink}>tw</a>
+                    <a onClick={() => navigate('/Error')} className={Style.socialLink}>ig</a>
                   </div>
                 </div>
                 <div className={Style.founderBadge}>COO & Co-Founder</div>

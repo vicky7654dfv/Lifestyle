@@ -1,0 +1,192 @@
+.processSection {
+  padding: 2rem 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.header h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #007bff, #6c5ce7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: #6c757d;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.processSteps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+
+.processStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.stepConnector {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  right: -50%;
+  height: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.connectorLine {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #007bff, #6ab04c, #ff6b6b, #ffd93d);
+  opacity: 0.3;
+}
+
+.stepCircle {
+  width: 80px;
+  height: 80px;
+  border: 3px solid;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.processStep:hover .stepCircle {
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.stepNumber {
+  font-size: 0.8rem;
+  font-weight: 600;
+  position: absolute;
+  top: -5px;
+  background: white;
+  padding: 0 0.5rem;
+}
+
+.stepIcon {
+  font-size: 1.8rem;
+  margin-bottom: 0.2rem;
+}
+
+.stepContent h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.stepContent p {
+  color: #6c757d;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .processSteps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+  
+  .stepConnector {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .processSection {
+    padding: 3rem 0;
+  }
+  
+  .header h2 {
+    font-size: 2.4rem;
+  }
+  
+  .processSteps {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .processStep {
+    flex-direction: row;
+    text-align: left;
+    gap: 1.5rem;
+  }
+  
+  .stepCircle {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+  
+  .stepContent {
+    flex: 1;
+  }
+}
+
+@media (max-width: 425.6px) {
+  .processSection {
+    padding: 2rem 0;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  .header h2 {
+    font-size: 2rem;
+  }
+  
+  .header p {
+    font-size: 1rem;
+  }
+  
+  .processStep {
+    gap: 1rem;
+  }
+  
+  .stepCircle {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .stepIcon {
+    font-size: 1.5rem;
+  }
+  
+  .stepContent h3 {
+    font-size: 1.2rem;
+  }
+  
+  .stepContent p {
+    font-size: 0.9rem;
+  }
+}

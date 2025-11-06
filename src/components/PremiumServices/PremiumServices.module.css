@@ -1,0 +1,253 @@
+.premiumServices {
+  padding: 2rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.header h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #007bff, #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: #6c757d;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.premiumGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.premiumCard {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.premiumCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #007bff, #6ab04c);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.premiumCard:hover::before {
+  opacity: 1;
+}
+
+.premiumCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 123, 255, 0.2);
+}
+
+.premiumCard.popular {
+  border-color: #007bff;
+  transform: scale(1.05);
+}
+
+.premiumCard.popular:hover {
+  transform: scale(1.05) translateY(-8px);
+}
+
+.popularBadge {
+  position: absolute;
+  top: 1rem;
+  right: -2rem;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  padding: 0.5rem 3rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 10px rgba(0, 123, 255, 0.3);
+}
+
+.cardHeader {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.cardHeader h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #007bff;
+  background: linear-gradient(135deg, #007bff, #6ab04c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.description {
+  color: #6c757d;
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.benefitsList {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.benefitsList li {
+  padding: 0.75rem 0;
+  color: #4a5568;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid #f1f3f4;
+}
+
+.benefitsList li:last-child {
+  border-bottom: none;
+}
+
+.benefitIcon {
+  color: #6ab04c;
+  font-size: 1.2rem;
+}
+
+.premiumBtn, .popularBtn {
+  width: 100%;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.premiumBtn {
+  background: transparent;
+  color: #007bff;
+  border: 2px solid #007bff;
+}
+
+.premiumBtn:hover {
+  background: #007bff;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+}
+
+.popularBtn {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border: 2px solid #007bff;
+}
+
+.popularBtn:hover {
+  background: linear-gradient(135deg, #0056b3, #007bff);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .premiumGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .premiumCard.popular {
+    transform: none;
+  }
+  
+  .premiumCard.popular:hover {
+    transform: translateY(-8px);
+  }
+}
+
+@media (max-width: 768px) {
+  .premiumServices {
+    padding: 2rem 0;
+  }
+  
+  .header h2 {
+    font-size: 2.4rem;
+  }
+  
+  .premiumGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .premiumCard {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 425.6px) {
+  .premiumServices {
+    padding: 2rem 0;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  .header h2 {
+    font-size: 2rem;
+  }
+  
+  .header p {
+    font-size: 1rem;
+  }
+  
+  .premiumCard {
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+  
+  .cardHeader h3 {
+    font-size: 1.3rem;
+  }
+  
+  .price {
+    font-size: 1.6rem;
+  }
+  
+  .premiumBtn, .popularBtn {
+    padding: 0.875rem 1.5rem;
+  }
+}

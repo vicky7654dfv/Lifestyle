@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import Style from "./FAQ.module.css";
+import { useNavigate } from "react-router-dom";
 
 export default function FAQ() {
   const [openQuestion, setOpenQuestion] = useState(null);
-
+  
+  const navigate=useNavigate();
+  
   const toggleQuestion = (questionId) => {
     setOpenQuestion(openQuestion === questionId ? null : questionId);
   };
@@ -392,8 +395,8 @@ export default function FAQ() {
           <h3>Still have questions?</h3>
           <p>Our customer care team is available to assist you with any additional inquiries.</p>
           <div className={Style.contactButtons}>
-            <button className={Style.primaryButton} onClick={() => window.location.href = '/Error'}>Live Chat Now</button>
-            <button className={Style.secondaryButton} onClick={() => window.location.href = '/Contact'}>Support</button>
+            <button className={Style.primaryButton} onClick={() => navigate('/Error')}>Live Chat Now</button>
+            <button className={Style.secondaryButton} onClick={() => navigate('/Error')}>Support</button>
           </div>
         </div>
       </footer>

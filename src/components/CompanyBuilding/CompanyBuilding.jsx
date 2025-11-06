@@ -4,8 +4,11 @@ import stacklyLogo from "../../assets/Header/logo.png";
 import building1 from "../../assets/About/CompanyBuilding/1.webp";
 import building2 from "../../assets/About/CompanyBuilding/2.webp";
 import building3 from "../../assets/About/CompanyBuilding/3.webp";
+import { useNavigate } from "react-router-dom";
 
 export default function CompanyBuilding() {
+  const navigate=useNavigate();
+
   return (  
       <section className={Style.stacklySection}>
         <div className={Style.stacklyContainer}>
@@ -29,7 +32,7 @@ export default function CompanyBuilding() {
               <div className={Style.buildingImageContainer}>
                 <img src={building1} alt="Stackly Headquarters" className={Style.buildingImage} />
                 <div className={Style.buildingOverlay}>
-                  <span className={Style.viewDetails} onClick={() => window.location.href = '/Error'}>View Details</span>
+                  <span className={Style.viewDetails} onClick={() => navigate('/Error')}>View Details</span>
                 </div>
               </div>
               <div className={Style.buildingInfo}>
@@ -47,7 +50,7 @@ export default function CompanyBuilding() {
               <div className={Style.buildingImageContainer}>
                 <img src={building2} alt="Stackly Europe" className={Style.buildingImage} />
                 <div className={Style.buildingOverlay}>
-                  <span className={Style.viewDetails} onClick={() => window.location.href = '/Error'}>View Details</span>
+                  <span className={Style.viewDetails} onClick={() => navigate('/Error')}>View Details</span>
                 </div>
               </div>
               <div className={Style.buildingInfo}>
@@ -65,7 +68,7 @@ export default function CompanyBuilding() {
               <div className={Style.buildingImageContainer}>
                 <img src={building3} alt="Stackly Asia Pacific" className={Style.buildingImage} />
                 <div className={Style.buildingOverlay}>
-                  <span className={Style.viewDetails} onClick={() => window.location.href = '/Error'}>View Details</span>
+                  <span className={Style.viewDetails} onClick={() => navigate('/Error')}>View Details</span>
                 </div>
               </div>
               <div className={Style.buildingInfo}>
