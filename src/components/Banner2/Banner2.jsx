@@ -1,7 +1,7 @@
 import React from "react";
 import Style from "./Banner2.module.css";
-import vidBg from "../../assets/Banner1/vidBg.mp4"; // or .webm
-import { Link, useNavigate } from "react-router-dom";
+import bgVid from "../../assets/Banner2/bgVid.webm";
+import { useNavigate } from "react-router-dom";
 
 export default function Banner2() {
   const navigate = useNavigate();
@@ -9,24 +9,15 @@ export default function Banner2() {
   return (
     <div className={Style.bannerWrap} data-aos="zoom-in">
       <video 
+        src={bgVid}
         autoPlay 
         muted 
         loop 
         playsInline
         className={Style.videoBg}
       >
-        <source src={vidBg} type="video/mp4" />
-        {/* Fallback for different video formats */}
-        <source src={vidBg.replace('.mp4', '.webm')} type="video/webm" />
         Your browser does not support the video tag.
       </video>
-      
-      {/* Fallback image in case video doesn't load */}
-      <img 
-        src="/fallback-banner.jpg" 
-        alt="Lifestyle background" 
-        className={Style.fallbackImage}
-      />
       
       <div className={Style.textWrap}>
         <h3>Live Your Best Life</h3>
@@ -36,7 +27,6 @@ export default function Banner2() {
         </button>
       </div>
       
-      {/* Video overlay for better text readability */}
       <div className={Style.videoOverlay}></div>
     </div>
   );

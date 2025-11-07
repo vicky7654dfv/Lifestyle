@@ -17,17 +17,6 @@
   z-index: 1;
 }
 
-.fallbackImage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  display: none; /* Hidden by default, shows if video fails */
-}
-
 .videoOverlay {
   position: absolute;
   top: 0;
@@ -58,21 +47,21 @@
 .textWrap h3 {
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
-  background: linear-gradient(45deg, #e6f2ff, #b3d9ff); /* Softer gradient */
+  background: linear-gradient(45deg, #e6f2ff, #b3d9ff);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
   font-weight: 700;
   line-height: 1.2;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added shadow for better readability */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .textWrap p {
   font-size: 1.3rem;
   margin-bottom: 2.5rem;
   line-height: 1.6;
-  color: #f0f8ff; /* Light blue-white for better contrast */
+  color: #f0f8ff;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   font-weight: 400;
 }
@@ -112,19 +101,6 @@
 
 .heroBtn:hover::before {
   left: 100%;
-}
-
-/* Video loading states */
-.bannerWrap.loading .videoBg {
-  filter: blur(5px);
-}
-
-.bannerWrap.error .videoBg {
-  display: none;
-}
-
-.bannerWrap.error .fallbackImage {
-  display: block;
 }
 
 /* Responsive Design */
@@ -209,8 +185,8 @@
     display: none;
   }
   
-  .fallbackImage {
-    display: block;
+  .bannerWrap {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   }
   
   .heroBtn:hover {
