@@ -15,9 +15,7 @@ export default function Banner2() {
         loop 
         playsInline
         className={Style.videoBg}
-      >
-        Your browser does not support the video tag.
-      </video>
+      />
       
       <div className={Style.textWrap}>
         <h3>Live Your Best Life</h3>
