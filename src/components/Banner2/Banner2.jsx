@@ -1,6 +1,6 @@
 import React from "react";
 import Style from "./Banner2.module.css";
-import BannerVideo from "../../assets/Banner1/vidBg.mp4"; // or .webm
+import vidBg from "../../assets/Banner1/vidBg.mp4"; // or .webm
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Banner2() {
@@ -15,9 +15,9 @@ export default function Banner2() {
         playsInline
         className={Style.videoBg}
       >
-        <source src={BannerVideo} type="video/mp4" />
+        <source src={vidBg} type="video/mp4" />
         {/* Fallback for different video formats */}
-        <source src={BannerVideo.replace('.mp4', '.webm')} type="video/webm" />
+        <source src={vidBg.replace('.mp4', '.webm')} type="video/webm" />
         Your browser does not support the video tag.
       </video>
       
