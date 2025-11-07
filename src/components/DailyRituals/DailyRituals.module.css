@@ -166,6 +166,10 @@
   .imgWrap {
     height: 250px;
   }
+
+  .imgWrap img{
+    height: 300px;
+  }
   
   .textAreaWrap {
     padding: 2rem 1.5rem;

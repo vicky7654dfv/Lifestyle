@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import Style from "../Header/Header.module.css";
-import Img from "../../assets/Header/logo.png";
+import Img from "../../assets/Header/logo.webp";
 import { Link, useLocation } from "react-router-dom";
 import { CartContext } from "../CartContext/CartContext";
 import { SearchContext } from "../SearchContext/SearchContext";

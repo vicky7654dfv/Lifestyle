@@ -1,5 +1,5 @@
 import React from "react";
-import Img from "../../assets/Grid1/1.jpg";
+import pic1 from "../../assets/DailyRituals/pic1.webp";
 import Style from "./DailyRituals.module.css";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -8,7 +8,7 @@ export default function DailyRituals() {
   return (
     <div data-aos="fade-up" className={Style.fullWrap}>
       <div className={Style.imgWrap}>
-        <img src={Img} alt="Morning rituals" />
+        <img src={pic1} alt="Morning rituals" />
         <div className={Style.imageOverlay}></div>
       </div>
       <div className={Style.textAreaWrap}>

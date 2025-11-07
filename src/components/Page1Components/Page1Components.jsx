@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Style from "./Page1Components.module.css";
-import Img1 from "../../assets/Page1Components/Img1.jpg"
-import Img2 from "../../assets/Page1Components/Img2.jpg"
-import Slide1 from "../../assets/Page1Components/1.jpg"
-import Slide2 from "../../assets/Page1Components/2.jpg"
-import Slide3 from "../../assets/Page1Components/3.jpg"
+import Img1 from "../../assets/Page1Components/Img1.webp"
+import Img2 from "../../assets/Page1Components/Img2.webp"
+import Slide1 from "../../assets/Page1Components/1.webp"
+import Slide2 from "../../assets/Page1Components/2.webp"
+import Slide3 from "../../assets/Page1Components/3.webp"
 import { Link } from 'react-router-dom';
 
 

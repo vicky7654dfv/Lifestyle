@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Style from "./Login.module.css";
 import { useNavigate, Link } from "react-router-dom";
-import ImgSide from "../../assets/Header/logo.png";
+import ImgSide from "../../assets/Header/logo.webp";
 
 export default function Login() {
   const navigate = useNavigate();

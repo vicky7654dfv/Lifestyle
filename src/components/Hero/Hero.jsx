@@ -1,8 +1,8 @@
 import React from "react";
 import Style from "./Hero.module.css";
-import aboutHero from "../../assets/About/Hero/1.jpg";
-import lifestyle1 from "../../assets/About/Hero/2.jpg";
-import lifestyle2 from "../../assets/About/Hero/3.jpg";
+import aboutHero from "../../assets/About/Hero/1.webp";
+import lifestyle1 from "../../assets/About/Hero/2.webp";
+import lifestyle2 from "../../assets/About/Hero/3.webp";
 
 export default function AboutUs() {
   return (

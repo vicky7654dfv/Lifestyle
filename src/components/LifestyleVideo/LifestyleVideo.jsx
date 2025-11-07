@@ -19,7 +19,7 @@ export default function LifestyleVideo() {
         </p>
         <button className={Style.videoBtn} onClick={()=>{navigate("/Error")}}>
           <a 
-            href="https://www.youtube.com/embed/YD9QLw5vBZQ" 
+            href="https://www.youtube.com/embed/j734gLbQFbU" 
             target="_blank" 
             rel="noopener noreferrer"
           >
@@ -31,7 +31,7 @@ export default function LifestyleVideo() {
         <iframe
           width="100%"
           height="400"
-          src="https://www.youtube.com/embed/YD9QLw5vBZQ"
+          src="https://www.youtube.com/embed/j734gLbQFbU"
           title="Mindful Living Journey"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

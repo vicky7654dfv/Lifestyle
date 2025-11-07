@@ -1,6 +1,6 @@
 import React from "react";
 import Style from "./CompanyBuilding.module.css";
-import stacklyLogo from "../../assets/Header/logo.png";
+import stacklyLogo from "../../assets/Header/logo.webp";
 import building1 from "../../assets/About/CompanyBuilding/1.webp";
 import building2 from "../../assets/About/CompanyBuilding/2.webp";
 import building3 from "../../assets/About/CompanyBuilding/3.webp";

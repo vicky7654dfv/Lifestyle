@@ -1,7 +1,6 @@
 import React from "react";
 import Style from "./Contact.module.css";
 import { Link, useNavigate } from "react-router-dom";
-import company from "../../assets/Contact/company.webp"
 
 export default function Contact() {
   const navigate = useNavigate();

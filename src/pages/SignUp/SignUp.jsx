@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Style from "./SignUp.module.css";
 import { useNavigate } from "react-router-dom";
-import ImgSide from "../../assets/Header/logo.png";
+import ImgSide from "../../assets/Header/logo.webp";
 
 export default function SignUp() {
   const navigate = useNavigate();
