@@ -36,12 +36,12 @@ export default function Footer() {
         <div className={Style.box}>
           <h4>Shop</h4>
           <ul>
-            <li><Link to={"/Men"}>Men's Collection</Link></li>
-            <li><Link to={"/Women"}>Women's Collection</Link></li>
-            <li><Link to={"/Accessories"}>Accessories</Link></li>
-            <li><Link to={"/NewArrivals"}>New Arrivals</Link></li>
-            <li><Link to={"/Sale"}>Sale & Offers</Link></li>
-            <li><Link to={"/GiftCards"}>Gift Cards</Link></li>
+            <li><Link to={"/Error"}>Men's Collection</Link></li>
+            <li><Link to={"/Error"}>Women's Collection</Link></li>
+            <li><Link to={"/Error"}>Accessories</Link></li>
+            <li><Link to={"/Error"}>New Arrivals</Link></li>
+            <li><Link to={"/Error"}>Sale & Offers</Link></li>
+            <li><Link to={"/Error"}>Gift Cards</Link></li>
           </ul>
         </div>
         
