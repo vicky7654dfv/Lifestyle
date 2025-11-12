@@ -30,12 +30,14 @@ export default function Header() {
   return (
     <div data-aos="fade-up" className={Style.headerWrap}>
       <div className={Style.imgWrap}>
-        <img src={Img} alt="logo" />
+        <Link to="/">
+          <img src={Img} alt="logo" />
+        </Link>
       </div>
       <div className={Style.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
         ☰
       </div>
-      
+
       <div className={Style.inputDiv}>
         <form onSubmit={handleSearchSubmit} className={Style.searchForm}>
           <input
@@ -45,19 +47,19 @@ export default function Header() {
             onChange={handleSearchChange}
             className={Style.searchInput}
           />
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             className={Style.searchButton}
             onClick={handleSearchClick}
           >
-            <svg 
-              width="20" 
-              height="20" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
               strokeLinejoin="round"
             >
               <circle cx="11" cy="11" r="8"></circle>
@@ -99,7 +101,7 @@ export default function Header() {
           </li>
           <li className={Style.cartLink}>
             <Link to="/Checkout">
-              Checkout 
+              Checkout
               {getCartItemsCount() > 0 && (
                 <span className={Style.cartCount}>{getCartItemsCount()}</span>
               )}
