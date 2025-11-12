@@ -18,6 +18,7 @@ import { CartProvider } from "./components/CartContext/CartContext";
 import { SearchProvider } from "./components/SearchContext/SearchContext";
 import ScrollToTop from "./components/ScrollToTop";
 import Error from "./pages/Error/Error";
+import { CategoryProvider } from "./components/CategoryContext/CategoryContext";
 
 function App() {
   useEffect(() => {
@@ -31,6 +32,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <CategoryProvider>
         <ScrollToTop />
       <SearchProvider>
       <CartProvider>
@@ -51,6 +53,7 @@ function App() {
         </CartProvider>
         </SearchProvider>
         <Footer />
+        </CategoryProvider>
       </BrowserRouter>
     </>
   );

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import Style from "./Grid1.module.css";
 import Img1 from "../../assets/Grid1/1.webp";
 import Img2 from "../../assets/Grid1/2.webp";
@@ -22,11 +22,30 @@ import Img19 from "../../assets/Grid1/19.webp";
 import Img20 from "../../assets/Grid1/20.webp";
 import { CartContext } from "../CartContext/CartContext";
 import { SearchContext } from "../SearchContext/SearchContext";
+import { useCategory } from "../CategoryContext/CategoryContext";
 
 export default function Grid1() {
-  const [activeCategory, setActiveCategory] = useState("All");
+  // Use the category context instead of local state
+  const { activeCategory, setActiveCategory } = useCategory();
   const { cart, addToCart, removeFromCart } = useContext(CartContext);
   const { searchTerm } = useContext(SearchContext);
+  
+  // Create a ref for the grid section
+  const gridSectionRef = useRef(null);
+
+  // Scroll to grid section when category changes
+  useEffect(() => {
+    if (activeCategory !== "All" && gridSectionRef.current) {
+      // Small timeout to ensure the DOM has updated
+      setTimeout(() => {
+        gridSectionRef.current.scrollIntoView({ 
+          behavior: "smooth", 
+          block: "start",
+          inline: "nearest"
+        });
+      }, 100);
+    }
+  }, [activeCategory]);
 
   const lifestyleItems = [
     // Men Category (4 items)
@@ -215,7 +234,11 @@ export default function Grid1() {
 
   return (
     <>
-      <div data-aos="fade" className={Style.gridSection}>
+      <div 
+        ref={gridSectionRef} 
+        data-aos="fade" 
+        className={Style.gridSection}
+      >
         <div className={Style.sectionHeader}>
           <h2 className={Style.sectionTitle}>Lifestyle Collection</h2>
           <p className={Style.sectionSubtitle}>Curated products for your modern lifestyle</p>
