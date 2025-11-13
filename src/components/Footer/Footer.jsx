@@ -1,12 +1,13 @@
 import React from "react";
 import Style from "./Footer.module.css";
 import Img1 from "../../assets/Header/logo.webp";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useCategory } from "../CategoryContext/CategoryContext";
 
 export default function Footer() {
   const { setActiveCategory } = useCategory();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleCategoryClick = (category) => {
     setActiveCategory(category);
@@ -16,7 +17,6 @@ export default function Footer() {
       navigate("/");
     } else {
       // If we're already on home page, scroll to the grid section
-      // Use a more reliable selector that matches Grid1's structure
       setTimeout(() => {
         const gridSection = document.querySelector('[data-aos="fade"]');
         if (gridSection) {
@@ -26,6 +26,52 @@ export default function Footer() {
             inline: "nearest"
           });
         }
+      }, 100);
+    }
+  };
+
+  const handleQuickLinkClick = (e, path) => {
+    e.preventDefault();
+    
+    // If we're already on the target page, scroll to top
+    if (location.pathname === path) {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    } else {
+      // If we're not on target page, navigate to it
+      navigate(path);
+      
+      // Scroll to top after navigation (small delay to ensure page is loaded)
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      }, 100);
+    }
+  };
+
+  const handleSocialLinkClick = (e) => {
+    e.preventDefault();
+    
+    // If we're already on the Error page, scroll to top
+    if (location.pathname === "/Error") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    } else {
+      // If we're not on Error page, navigate to it
+      navigate("/Error");
+      
+      // Scroll to top after navigation (small delay to ensure page is loaded)
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
       }, 100);
     }
   };
@@ -51,22 +97,52 @@ export default function Footer() {
           <h4>Quick Links</h4>
           <ul>
             <li>
-              <Link to={"/About"}>About Us</Link>
+              <a
+                href="/About"
+                onClick={(e) => handleQuickLinkClick(e, "/About")}
+              >
+                About Us
+              </a>
             </li>
             <li>
-              <Link to={"/Services"}>Services</Link>
+              <a
+                href="/Services"
+                onClick={(e) => handleQuickLinkClick(e, "/Services")}
+              >
+                Services
+              </a>
             </li>
             <li>
-              <Link to={"/FAQ"}>FAQ</Link>
+              <a
+                href="/FAQ"
+                onClick={(e) => handleQuickLinkClick(e, "/FAQ")}
+              >
+                FAQ
+              </a>
             </li>
             <li>
-              <Link to={"/Contact"}>Contact</Link>
+              <a
+                href="/Contact"
+                onClick={(e) => handleQuickLinkClick(e, "/Contact")}
+              >
+                Contact
+              </a>
             </li>
             <li>
-              <Link to={"/SignUp"}>Sign Up</Link>
+              <a
+                href="/SignUp"
+                onClick={(e) => handleQuickLinkClick(e, "/SignUp")}
+              >
+                Sign Up
+              </a>
             </li>
             <li>
-              <Link to={"/Login"}>Login</Link>
+              <a
+                href="/Login"
+                onClick={(e) => handleQuickLinkClick(e, "/Login")}
+              >
+                Login
+              </a>
             </li>
           </ul>
         </div>
@@ -166,18 +242,34 @@ export default function Footer() {
             updates, and tips to elevate your wardrobe with confidence.
           </p>
           <div className={Style.media}>
-            <Link to={"/Error"} className={Style.socialLink}>
+            <a
+              href="/Error"
+              onClick={handleSocialLinkClick}
+              className={Style.socialLink}
+            >
               <i className="fa-brands fa-linkedin-in"></i>
-            </Link>
-            <Link to={"/Error"} className={Style.socialLink}>
+            </a>
+            <a
+              href="/Error"
+              onClick={handleSocialLinkClick}
+              className={Style.socialLink}
+            >
               <i className="fa-brands fa-facebook-f"></i>
-            </Link>
-            <Link to={"/Error"} className={Style.socialLink}>
+            </a>
+            <a
+              href="/Error"
+              onClick={handleSocialLinkClick}
+              className={Style.socialLink}
+            >
               <i className="fa-brands fa-x-twitter"></i>
-            </Link>
-            <Link to={"/Error"} className={Style.socialLink}>
+            </a>
+            <a
+              href="/Error"
+              onClick={handleSocialLinkClick}
+              className={Style.socialLink}
+            >
               <i className="fa-brands fa-instagram"></i>
-            </Link>
+            </a>
           </div>
         </div>
       </div>
