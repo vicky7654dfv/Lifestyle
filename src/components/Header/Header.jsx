@@ -3,7 +3,6 @@ import Style from "../Header/Header.module.css";
 import Img from "../../assets/Header/logo.webp";
 import { Link, useLocation } from "react-router-dom";
 import { CartContext } from "../CartContext/CartContext";
-import { SearchContext } from "../SearchContext/SearchContext";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,22 +10,9 @@ export default function Header() {
   const location = useLocation();
   const isHome2 = location.pathname === "/HomePage2";
   const { getCartItemsCount } = useContext(CartContext);
-  const { searchTerm, setSearchTerm } = useContext(SearchContext);
   
   const menuRef = useRef(null);
   const hamburgerRef = useRef(null);
-
-  const handleSearchChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
-
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-  };
-
-  const handleSearchClick = () => {
-    // Search functionality handled by context
-  };
 
   const toggleDropdown = (e) => {
     e.preventDefault();
@@ -92,8 +78,6 @@ export default function Header() {
     };
   }, [menuOpen]);
 
-  
-
   return (
     <div data-aos="fade-up" className={Style.headerWrap}>
       <div className={Style.imgWrap}>
@@ -109,37 +93,6 @@ export default function Header() {
         onClick={toggleMenu}
       >
         {menuOpen ? '✕' : '☰'}
-      </div>
-
-      <div className={Style.inputDiv}>
-        <form onSubmit={handleSearchSubmit} className={Style.searchForm}>
-          <input
-            type="text"
-            placeholder="Discover your style 💫"
-            value={searchTerm}
-            onChange={handleSearchChange}
-            className={Style.searchInput}
-          />
-          <button
-            type="submit"
-            className={Style.searchButton}
-            onClick={handleSearchClick}
-          >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-          </button>
-        </form>
       </div>
 
       {/* Navigation Menu */}

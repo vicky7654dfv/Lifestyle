@@ -11,7 +11,7 @@ export default function Footer() {
 
   const handleCategoryClick = (category) => {
     setActiveCategory(category);
-    
+
     // If we're not already on the home page, navigate there
     if (window.location.pathname !== "/") {
       navigate("/");
@@ -20,10 +20,10 @@ export default function Footer() {
       setTimeout(() => {
         const gridSection = document.querySelector('[data-aos="fade"]');
         if (gridSection) {
-          gridSection.scrollIntoView({ 
-            behavior: "smooth", 
+          gridSection.scrollIntoView({
+            behavior: "smooth",
             block: "start",
-            inline: "nearest"
+            inline: "nearest",
           });
         }
       }, 100);
@@ -32,22 +32,22 @@ export default function Footer() {
 
   const handleQuickLinkClick = (e, path) => {
     e.preventDefault();
-    
+
     // If we're already on the target page, scroll to top
     if (location.pathname === path) {
       window.scrollTo({
         top: 0,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     } else {
       // If we're not on target page, navigate to it
       navigate(path);
-      
+
       // Scroll to top after navigation (small delay to ensure page is loaded)
       setTimeout(() => {
         window.scrollTo({
           top: 0,
-          behavior: "smooth"
+          behavior: "smooth",
         });
       }, 100);
     }
@@ -55,22 +55,22 @@ export default function Footer() {
 
   const handleSocialLinkClick = (e) => {
     e.preventDefault();
-    
+
     // If we're already on the Error page, scroll to top
     if (location.pathname === "/Error") {
       window.scrollTo({
         top: 0,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     } else {
       // If we're not on Error page, navigate to it
       navigate("/Error");
-      
+
       // Scroll to top after navigation (small delay to ensure page is loaded)
       setTimeout(() => {
         window.scrollTo({
           top: 0,
-          behavior: "smooth"
+          behavior: "smooth",
         });
       }, 100);
     }
@@ -86,11 +86,11 @@ export default function Footer() {
             sustainability — making Stackly a global symbol of confidence and
             style.
           </p>
-          <Link to={"/About"}>
+          <a href="/About" onClick={(e) => handleQuickLinkClick(e, "/About")}>
             <button className={Style.aboutBtn}>
               More about company <i className="fa-solid fa-angles-right"></i>
             </button>
-          </Link>
+          </a>
         </div>
 
         <div className={Style.box}>
@@ -113,10 +113,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a
-                href="/FAQ"
-                onClick={(e) => handleQuickLinkClick(e, "/FAQ")}
-              >
+              <a href="/FAQ" onClick={(e) => handleQuickLinkClick(e, "/FAQ")}>
                 FAQ
               </a>
             </li>
