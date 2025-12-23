@@ -9,12 +9,28 @@
   overflow: hidden;
 }
 
-.backgroundImage {
+/* Updated styling for Video */
+.backgroundVideo {
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  object-fit: cover;
+}
+
+/* --- CLEAN OVERLAY (No Dots, No Blur) --- */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
-  object-fit: cover;
+
+  /* Just a smooth dark gradient to make text pop */
+  background: linear-gradient(135deg, rgba(202, 255, 251, 0.6) 0%, rgba(10, 25, 50, 0.4) 100%);
 }
 
 .content {
@@ -29,14 +45,15 @@
   font-size: 4rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
 }
 
 .paragraph {
   font-size: 1.2rem;
   margin-bottom: 2rem;
   line-height: 1.6;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  font-weight: 500;
 }
 
 .ctaButton {
@@ -53,12 +70,14 @@
   text-decoration: none;
   display: inline-block;
   color: #007bff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .ctaButton:hover {
   background-color: #007bff;
   color: #ffffff;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 20px rgba(0, 123, 255, 0.4);
+  transform: translateY(-2px);
   text-decoration: none;
 }
 

@@ -1,6 +1,6 @@
 import React from "react";
 import Style from "./Banner2.module.css";
-import bgVid from "../../assets/Banner2/bgVid.webm";
+import bgVid from "../../assets/Banner2/bgVid.mp4";
 import { useNavigate } from "react-router-dom";
 
 export default function Banner2() {

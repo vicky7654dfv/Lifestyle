@@ -19,7 +19,7 @@ export default function LifestyleVideo() {
         </p>
         <button className={Style.videoBtn} onClick={()=>{navigate("/Error")}}>
           <a 
-            href="https://www.youtube.com/embed/j734gLbQFbU" 
+            href="#/Error" 
             target="_blank" 
             rel="noopener noreferrer"
           >

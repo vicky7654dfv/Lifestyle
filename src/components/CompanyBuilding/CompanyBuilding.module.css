@@ -1,7 +1,7 @@
 /* Stackly Section */
 .stacklySection {
   padding: 20px;
-  background: linear-gradient(135deg, #d3e8ff 40%, #f8f9fa 60%);
+  background: linear-gradient(135deg, #f3f9ff 40%, #f8f9fa 60%);
   position: relative;
   overflow: hidden;
 }
@@ -13,7 +13,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #007bff, transparent);
+  background: linear-gradient(90deg, transparent, #f8f9fa, transparent);
 }
 
 .stacklyContainer {

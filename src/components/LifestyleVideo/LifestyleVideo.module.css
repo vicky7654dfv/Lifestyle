@@ -20,28 +20,63 @@
   z-index: 2;
 }
 
+/* --- ENHANCED HEADLINE --- */
 .textAreaWrap h2 {
   font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(45deg, #ffffff, #f0f8ff);
-  background-clip: text;               /* Standard property */
-  -webkit-background-clip: text;       /* For Safari & Chrome */
-  color: transparent;                  /* Ensures gradient shows on all browsers */
-  -webkit-text-fill-color: transparent;/* Safari gradient text fix */
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem; /* Increased spacing for underline */
+  background: linear-gradient(45deg, #ffffff, #89f7fe); /* Brighter Gradient */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: inline-block;
+  letter-spacing: 0.5px;
 }
 
+/* Glowing Underline Effect */
+.textAreaWrap h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 80px;
+  height: 4px;
+  background: #00d2ff; /* Bright Cyan */
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0, 210, 255, 0.8), 0 0 20px rgba(0, 210, 255, 0.4);
+  transition: width 0.3s ease;
+}
 
+.textAreaWrap h2:hover::after {
+  width: 120px; /* Expands on hover */
+}
+
+/* --- ENHANCED PARAGRAPHS --- */
 .para1, .para2 {
   font-size: 1.1rem;
   line-height: 1.7;
   margin-bottom: 1.5rem;
-  opacity: 0.9;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  color: rgba(255, 255, 255, 0.9);
+  
+  /* Left Border Accent */
+  border-left: 3px solid rgba(255, 255, 255, 0.2);
+  padding-left: 15px; /* Space for accent */
+  
+  transition: all 0.3s ease;
 }
 
 .para2 {
   margin-bottom: 2.5rem;
+}
+
+/* Paragraph Hover Effects */
+.para1:hover, .para2:hover {
+  border-left-color: #00d2ff; /* Cyan accent on hover */
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  transform: translateX(5px);
 }
 
 .videoBtn {
@@ -187,6 +222,7 @@
   
   .para1, .para2 {
     font-size: 1rem;
+    padding-left: 10px; /* Adjust padding for mobile */
   }
   
   .videoWrap {

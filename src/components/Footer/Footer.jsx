@@ -78,7 +78,7 @@ export default function Footer() {
 
   return (
     <>
-      <div data-aos="fade-up" className={Style.footerWrap}>
+      <div data-aos="fade" className={Style.footerWrap}>
         <div className={Style.box}>
           <img src={Img1} alt="Stackly Logo" />
           <p>
@@ -86,7 +86,7 @@ export default function Footer() {
             sustainability — making Stackly a global symbol of confidence and
             style.
           </p>
-          <a href="/About" onClick={(e) => handleQuickLinkClick(e, "/About")}>
+          <a href="#/About" onClick={(e) => handleQuickLinkClick(e, "/About")}>
             <button className={Style.aboutBtn}>
               More about company <i className="fa-solid fa-angles-right"></i>
             </button>
@@ -98,7 +98,7 @@ export default function Footer() {
           <ul>
             <li>
               <a
-                href="/About"
+                href="#/About"
                 onClick={(e) => handleQuickLinkClick(e, "/About")}
               >
                 About Us
@@ -106,20 +106,20 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="/Services"
+                href="#/Services"
                 onClick={(e) => handleQuickLinkClick(e, "/Services")}
               >
                 Services
               </a>
             </li>
             <li>
-              <a href="/FAQ" onClick={(e) => handleQuickLinkClick(e, "/FAQ")}>
+              <a href="#/FAQ" onClick={(e) => handleQuickLinkClick(e, "/FAQ")}>
                 FAQ
               </a>
             </li>
             <li>
               <a
-                href="/Contact"
+                href="#/Contact"
                 onClick={(e) => handleQuickLinkClick(e, "/Contact")}
               >
                 Contact
@@ -127,7 +127,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="/SignUp"
+                href="#/SignUp"
                 onClick={(e) => handleQuickLinkClick(e, "/SignUp")}
               >
                 Sign Up
@@ -135,7 +135,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="/Login"
+                href="#/Login"
                 onClick={(e) => handleQuickLinkClick(e, "/Login")}
               >
                 Login
@@ -149,7 +149,7 @@ export default function Footer() {
           <ul>
             <li>
               <a
-                href="/"
+                href="#/"
                 onClick={(e) => {
                   e.preventDefault();
                   handleCategoryClick("Men");
@@ -161,7 +161,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="/"
+                href="#/"
                 onClick={(e) => {
                   e.preventDefault();
                   handleCategoryClick("Women");
@@ -173,7 +173,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="/"
+                href="#/"
                 onClick={(e) => {
                   e.preventDefault();
                   handleCategoryClick("Accessories");
@@ -185,7 +185,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="/"
+                href="#/"
                 onClick={(e) => {
                   e.preventDefault();
                   handleCategoryClick("Gym");
@@ -197,7 +197,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="/"
+                href="#/"
                 onClick={(e) => {
                   e.preventDefault();
                   handleCategoryClick("Home Kits");
@@ -240,28 +240,28 @@ export default function Footer() {
           </p>
           <div className={Style.media}>
             <a
-              href="/Error"
+              href="#/Error"
               onClick={handleSocialLinkClick}
               className={Style.socialLink}
             >
               <i className="fa-brands fa-linkedin-in"></i>
             </a>
             <a
-              href="/Error"
+              href="#/Error"
               onClick={handleSocialLinkClick}
               className={Style.socialLink}
             >
               <i className="fa-brands fa-facebook-f"></i>
             </a>
             <a
-              href="/Error"
+              href="#/Error"
               onClick={handleSocialLinkClick}
               className={Style.socialLink}
             >
               <i className="fa-brands fa-x-twitter"></i>
             </a>
             <a
-              href="/Error"
+              href="#/Error"
               onClick={handleSocialLinkClick}
               className={Style.socialLink}
             >
@@ -271,7 +271,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div data-aos="fade-up" className={Style.bottomFooter}>
+      <div className={Style.bottomFooter}>
         <hr />
         <p>
           © 2025 Stackly Lifestyle Company. All rights reserved. Crafted with

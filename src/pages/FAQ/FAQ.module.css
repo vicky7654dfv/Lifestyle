@@ -2,7 +2,7 @@
   margin: 0 auto;
   padding: 60px 150px;
   background: 
-    linear-gradient(-135deg, #ffffff 0%, #7db1df 50%, #fafafa 100%),
+    linear-gradient(-135deg, #ffffff 0%, #f8fcff 50%, #fafafa 100%),
     radial-gradient(circle at 20% 80%, rgba(74, 144, 226, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, rgba(73, 205, 16, 0.08) 0%, transparent 50%);
   position: relative;

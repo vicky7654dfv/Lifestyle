@@ -7,7 +7,6 @@ import Slide2 from "../../assets/Page1Components/2.webp"
 import Slide3 from "../../assets/Page1Components/3.webp"
 import { Link } from 'react-router-dom';
 
-
 export default function Page1Components() {
   const partnersData = [
     {
@@ -72,6 +71,12 @@ export default function Page1Components() {
           <p>Discover our curated selection of lifestyle partners and their latest offerings</p>
         </div>
         
+        {/* Connecting Lines for Desktop */}
+        <div className={Style.connectionLines}>
+           <div className={Style.line}></div>
+           <div className={Style.dot}></div>
+        </div>
+
         <div className={Style.photosGrid}>
           {partnersData.map((partner) => (
             <div key={partner.id} className={Style.gridItem}>
@@ -81,6 +86,9 @@ export default function Page1Components() {
                   alt={partner.name}
                   className={Style.partnerImage}
                 />
+                {/* Particle overlay for visual fx */}
+                <div className={Style.particleOverlay}></div>
+                
                 <div className={Style.hoverOverlay}>
                   <div className={Style.hoverContent}>
                     <h3 className={Style.partnerName}>{partner.name}</h3>
@@ -127,7 +135,7 @@ export default function Page1Components() {
                 <div className={Style.slideContent}>
                   <h3 className={Style.slideTitle}>{slide.title}</h3>
                   <p className={Style.slideDescription}>{slide.description}</p>
-                  <Link to={"/Error"} className={Style.slideButton}>Discover Now</Link>
+                  {/* Buttons removed as requested */}
                 </div>
               </div>
             ))}

@@ -90,18 +90,24 @@
 
 .socialLinks {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem; /* Increased gap slightly */
 }
 
+/* --- Updated Icon Styles Start --- */
 .socialLinks span {
-  font-size: 1.5rem;
+  font-size: 3.5rem; /* Significantly increased base size */
   cursor: pointer;
-  transition: transform 0.3s ease;
+  /* Using a bouncy bezier curve for more dynamic feel */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); /* Subtle initial depth */
 }
 
 .socialLinks span:hover {
-  transform: scale(1.2);
+  transform: scale(1.4) translateY(-5px); /* Larger scale and slight upward movement */
+  /* Add a bright white glow effect */
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9)) brightness(1.2);
 }
+/* --- Updated Icon Styles End --- */
 
 .memberInfo {
   padding: 2rem;

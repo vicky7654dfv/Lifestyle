@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
 import About from "./pages/About/About";
 import Footer from "./components/Footer/Footer";
@@ -31,7 +31,7 @@ function App() {
   }, []);
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <CategoryProvider>
         <ScrollToTop />
       <SearchProvider>
@@ -54,7 +54,7 @@ function App() {
         </SearchProvider>
         <Footer />
         </CategoryProvider>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }

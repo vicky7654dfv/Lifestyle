@@ -43,7 +43,7 @@
 
 .testimonialCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 123, 255, 0.15);
+  box-shadow: 0 15px 20px rgba(0, 123, 255);
 }
 
 .testimonialHeader {
@@ -111,7 +111,7 @@
 
 .faqItem:hover {
   transform: translateX(5px);
-  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.12);
+  box-shadow: 0 8px 15px rgba(0, 123, 255);
 }
 
 .faqItem h4 {

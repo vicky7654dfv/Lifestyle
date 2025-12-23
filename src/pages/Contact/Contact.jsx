@@ -96,22 +96,33 @@ export default function Contact() {
           <form onSubmit={handleSubmit}>
             <input 
               type="text" 
+              id="fullName"
+              name="fullName"
               placeholder="Your Full Name" 
               required 
               aria-label="Your Name"
             />
             <input 
               type="email" 
+              id="email"
+              name="email"
               placeholder="Your Email Address" 
               required 
               aria-label="Your Email"
             />
             <input 
               type="tel" 
+              id="phone"
+              name="phone"
               placeholder="Phone Number (Optional)" 
               aria-label="Your Phone Number"
             />
-            <select aria-label="Inquiry Type" required>
+            <select 
+              id="inquiryType"
+              name="inquiryType"
+              aria-label="Inquiry Type" 
+              required
+            >
               <option value="">Select Inquiry Type</option>
               <option value="general">General Inquiry</option>
               <option value="products">Product Information</option>
@@ -121,6 +132,8 @@ export default function Contact() {
               <option value="feedback">Feedback & Suggestions</option>
             </select>
             <textarea 
+              id="message"
+              name="message"
               placeholder="Tell us how we can help enhance your lifestyle..." 
               rows="6" 
               required 

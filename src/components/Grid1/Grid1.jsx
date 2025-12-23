@@ -267,11 +267,14 @@ export default function Grid1() {
             const quantity = cartItem ? cartItem.quantity : 0;
             
             return (
-              <div key={item.id} className={Style.gridItem}>
+              <div 
+                key={item.id} 
+                className={Style.gridItem}
+                data-type={item.type} // Added for category-specific dot colors
+              >
                 <div className={Style.imageContainer}>
                   <img src={item.image} alt={item.label} className={Style.productImage} />
-                  <div className={Style.overlay}>
-                  </div>
+                  <div className={Style.overlay}></div>
                 </div>
                 <div className={Style.productInfo}>
                   <h3 className={Style.itemLabel}>{item.label}</h3>
@@ -284,6 +287,7 @@ export default function Grid1() {
                       onClick={() => removeFromCart(item)}
                       disabled={quantity === 0}
                       className={Style.quantityBtn}
+                      aria-label={`Remove one ${item.label}`}
                     >
                       −
                     </button>
@@ -291,6 +295,7 @@ export default function Grid1() {
                     <button
                       onClick={() => addToCart(item)}
                       className={Style.quantityBtn}
+                      aria-label={`Add one ${item.label}`}
                     >
                       +
                     </button>

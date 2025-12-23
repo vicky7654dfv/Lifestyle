@@ -66,9 +66,12 @@
 }
 
 .premiumCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
-  border-color: rgba(0, 123, 255, 0.2);
+  transform: translateY(-5px);
+  /* A tighter, sharper shadow */
+  box-shadow: 0 10px 30px #007bff;
+  /* Brighter, slightly thicker looking border effect */
+  border-color: #007bff;
+  background-color: #ffffff; /* Ensures it pops if on a grey bg */
 }
 
 .premiumCard.popular {
@@ -78,6 +81,7 @@
 
 .premiumCard.popular:hover {
   transform: scale(1.05) translateY(-8px);
+  border-color: 10px 10px 10px #007bff;
 }
 
 .popularBadge {
