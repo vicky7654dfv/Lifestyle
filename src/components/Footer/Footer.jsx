@@ -125,6 +125,29 @@ export default function Footer() {
                 Contact
               </a>
             </li>
+          </ul>
+        </div>
+
+        {/* MODIFIED SECTION: Explore (Replaces Shop) */}
+        <div className={Style.box}>
+          <h4>Explore</h4>
+          <ul>
+            <li>
+              <a
+                href="#/"
+                onClick={(e) => handleQuickLinkClick(e, "/")}
+              >
+                Home Page 1
+              </a>
+            </li>
+            <li>
+              <a
+                href="#/HomePage2"
+                onClick={(e) => handleQuickLinkClick(e, "/HomePage2")}
+              >
+                Home Page 2
+              </a>
+            </li>
             <li>
               <a
                 href="#/SignUp"
@@ -139,72 +162,6 @@ export default function Footer() {
                 onClick={(e) => handleQuickLinkClick(e, "/Login")}
               >
                 Login
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div className={Style.box}>
-          <h4>Shop</h4>
-          <ul>
-            <li>
-              <a
-                href="#/"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleCategoryClick("Men");
-                }}
-                className={Style.categoryLink}
-              >
-                Men's Collection
-              </a>
-            </li>
-            <li>
-              <a
-                href="#/"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleCategoryClick("Women");
-                }}
-                className={Style.categoryLink}
-              >
-                Women's Collection
-              </a>
-            </li>
-            <li>
-              <a
-                href="#/"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleCategoryClick("Accessories");
-                }}
-                className={Style.categoryLink}
-              >
-                Accessories
-              </a>
-            </li>
-            <li>
-              <a
-                href="#/"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleCategoryClick("Gym");
-                }}
-                className={Style.categoryLink}
-              >
-                Gym
-              </a>
-            </li>
-            <li>
-              <a
-                href="#/"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleCategoryClick("Home Kits");
-                }}
-                className={Style.categoryLink}
-              >
-                Home Kits
               </a>
             </li>
           </ul>
